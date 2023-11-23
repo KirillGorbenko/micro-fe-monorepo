@@ -1,0 +1,14 @@
+{
+  "name": "micro-fe",
+  "version": "0.0.1",
+  "description": "learn microfrontend",
+  "main": "index.ts",
+  "author": "KG",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build:dev": "webpack --env mode=development",
+    "build:prod": "webpack --env mode=production"
+  }
+}

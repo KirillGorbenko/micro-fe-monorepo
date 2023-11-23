@@ -1,0 +1,10 @@
+{
+  "name": "host",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "webpack serve --env mode=development port=1000"
+  },
+  "dependencies": {
+    "webpack-config-heplers": "0.0.1"
+  }
+}
