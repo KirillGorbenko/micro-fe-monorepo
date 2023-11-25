@@ -13,4 +13,4 @@ const paths: Paths = {
     entry: path.resolve(__dirname, 'src', 'index.tsx')
 };
 
-module.exports = (env: ENV) => buildWebpack({ env, paths });
+module.exports = (env: ENV) => buildWebpack({ env, paths, });

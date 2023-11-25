@@ -11,9 +11,13 @@ import {ConfigWithDevServer, Options} from "./types";
 import buildPlugins from "./buildPlugins";
 
 function buildWebpack(options: Options): ConfigWithDevServer {
-    const { env, paths, moduleFederationConfig } = { ...options };
+    const { env, paths, moduleFederationConfig, preset = 'react' } = { ...options };
     const isDev = env.mode === 'development';
     const isProd = env.mode === 'production';
+
+    const isReact = preset === 'react';
+    const isVue = preset === 'vue';
+    const isAngular = preset === 'angular';
 
     return (
         {
@@ -24,9 +28,21 @@ function buildWebpack(options: Options): ConfigWithDevServer {
                 path: paths.output,
                 clean: true,
             },
-            plugins: buildPlugins({ isDev, isProd, templatePath: paths.html, moduleFederationConfig }),
+            plugins: buildPlugins({
+                isDev,
+                isProd,
+                templatePath: paths.html,
+                moduleFederationConfig,
+                isReact,
+                isVue
+            }),
             module: {
                 rules: [
+                    isVue && {
+                        test: /\.vue$/,
+                        loader: "vue-loader",
+                        exclude: /node_modules/
+                    },
                     {
                         test: /\.s[ac]ss$/i,
                         use: [

@@ -6,7 +6,7 @@
   "author": "KG",
   "license": "MIT",
   "private": true,
-  "workspaces": ["packages/*"],
+  "workspaces": ["packages/*", "projects/*"],
   "scripts": {
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production"

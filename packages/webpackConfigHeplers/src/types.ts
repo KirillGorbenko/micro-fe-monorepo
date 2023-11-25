@@ -29,7 +29,8 @@ export type ModuleFederationConfig = MicroFrontendConfig | HostConfig;
 
 export type ConfigWithDevServer = webpack.Configuration & { devServer: DevServerConfig };
 export interface Options {
-    env: ENV,
-    paths: Paths,
-    moduleFederationConfig: ModuleFederationConfig
+    env: ENV;
+    paths: Paths;
+    moduleFederationConfig: ModuleFederationConfig;
+    preset?: 'react' | 'vue' | 'angular';
 }

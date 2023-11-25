@@ -12,12 +12,13 @@ const paths: Paths = {
     entry: path.resolve(__dirname, 'src', 'index.ts')
 };
 
-const moduleFederationConfig = {
-    name: "host",
-    remotes: {
-        "reactApp": "reactApp@http://localhost:2001/reactAppInit.js",
-        "vueApp": "vueApp@http://localhost:2002/vueAppInit.js"
-    }
-};
-
-module.exports = (env: ENV) => buildWebpack({ env, paths, moduleFederationConfig });
+module.exports = (env: ENV) => buildWebpack({
+    env,
+    paths,
+    moduleFederationConfig: {
+        name: 'vueApp',
+        filename: "vueAppInit.js",
+        exposes: { "./VueAppInit": path.resolve(__dirname, 'bootstrap.ts') }
+    },
+    preset: 'vue'
+});

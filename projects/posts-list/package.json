@@ -1,0 +1,17 @@
+{
+  "name": "posts-list",
+  "version": "0.0.1",
+  "scripts": {
+    "build:dev": "webpack --env mode=development port=2002",
+    "build:prod": "webpack --env mode=production",
+    "dev": "webpack serve --env mode=development port=2002"
+  },
+  "main": "./src/index.tsx",
+  "devDependencies": {
+    "webpack-config-heplers": "0.0.1",
+    "@types/vue": "2.0.0"
+  },
+  "dependencies": {
+    "vue": "3.3.8"
+  }
+}

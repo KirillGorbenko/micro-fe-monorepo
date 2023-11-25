@@ -10,7 +10,8 @@
     "moduleDetection": "auto",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "composite": true
+    "composite": true,
+    "moduleResolution": "node"
   },
   "exclude": ["node_modules"],
   "ts-node": {
