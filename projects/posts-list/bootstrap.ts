@@ -1,4 +1,4 @@
-import { mountingApp } from "./src/index";
+import { mountingApp } from "./src";
 
 function initMicroFrontend (element: Element) {
     if (!element) {
@@ -6,6 +6,6 @@ function initMicroFrontend (element: Element) {
     }
 
     mountingApp(element);
-};
+}
 
 export default initMicroFrontend;
