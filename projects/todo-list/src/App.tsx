@@ -1,10 +1,14 @@
 import React from "react";
+import TodoList from "./components/TodoList/TodoList";
 
-import styles from "./index.module.scss";
+import styles from './index.module.scss';
 
 const App = () => {
     return (
-        <div><button className={styles.qweqwe}>REACT</button></div>
+        <div className={styles.appWrapper}>
+            <h1>React</h1>
+            <TodoList />
+        </div>
     );
 };
 

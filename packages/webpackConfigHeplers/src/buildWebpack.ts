@@ -46,11 +46,11 @@ function buildWebpack(options: Options): ConfigWithDevServer {
                     {
                         test: /\.s[ac]ss$/i,
                         use: [
-                            { loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader },
+                            isReact ? { loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader } : { loader: 'vue-style-loader' },
                             {
                                 loader: 'css-loader',
                                 options: {
-                                    modules: true,
+                                    modules: isReact,
                                 },
                             },
                             { loader: 'sass-loader' },

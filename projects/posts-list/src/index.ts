@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
-import App from "./App.vue";
+import app from "./app.vue";
 
 export const mountingApp = (element?: string | Element) => {
-    const app = createApp(App);
+    const application = createApp(app);
 
-    app.mount(element || '#app');
+    application.mount(element || '#appLocal');
 };
 
 mountingApp();
