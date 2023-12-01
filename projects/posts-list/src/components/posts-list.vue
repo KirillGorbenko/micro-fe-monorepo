@@ -1,11 +1,17 @@
 <template>
   <button @click="updatePosts">Update posts</button>
+  <posts-adder />
   <ul class="list">
-    <li v-for="post in posts">{{ post.title }}</li>
+    <posts-list-item v-for="post in posts" :title='post.title' />
   </ul>
 </template>
 
 <script lang="ts">
+import PostsListItem from "./posts-list-item.vue";
+import Button from "./button.vue";
+import PostsAdder from "./posts-adder.vue";
+import { getAllPosts } from "../api";
+
 interface Post {
   userId: number;
   id: number;
@@ -18,6 +24,11 @@ interface Data {
 }
 
 export default {
+  components: {
+    PostsAdder,
+    PostsListItem,
+    Button
+  },
   data(): Data {
     return {
       posts: [],
@@ -25,12 +36,7 @@ export default {
   },
   methods: {
     async updatePosts(): Promise<void> {
-      try {
-        const resp = await fetch('https://jsonplaceholder.typicode.com/posts')
-        this.posts = await resp.json();
-      } catch(error) {
-        console.log(error)
-      }
+      this.posts = await getAllPosts();
     }
   },
   async mounted() {
