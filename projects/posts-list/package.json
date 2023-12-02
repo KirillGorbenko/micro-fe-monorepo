@@ -6,9 +6,8 @@
     "build:prod": "webpack --env mode=production",
     "dev": "webpack-dev-server --hot --env mode=development port=2002"
   },
-  "main": "./src/index.tsx",
+  "main": "./src/index.ts",
   "devDependencies": {
-    "webpack-config-heplers": "0.0.1",
     "@types/vue": "2.0.0"
   },
   "dependencies": {
