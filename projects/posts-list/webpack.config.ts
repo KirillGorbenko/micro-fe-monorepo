@@ -15,7 +15,8 @@ interface ENV {
 const paths = {
     html: path.resolve(__dirname, 'public', 'index.html'),
     output: path.resolve(__dirname, 'build'),
-    entry: path.resolve(__dirname, 'src', 'index.ts')
+    entry: path.resolve(__dirname, 'src', 'index.ts'),
+    vueAppInit: path.resolve(__dirname, 'bootstrap.ts')
 };
 
 module.exports = (env: ENV) => {
@@ -42,7 +43,7 @@ module.exports = (env: ENV) => {
                 new ModuleFederationPlugin({
                     name: 'vueApp',
                     filename: "vueAppInit.js",
-                    exposes: { "./VueAppInit": path.resolve(__dirname, 'bootstrap.ts') }
+                    exposes: { "./VueAppInit": paths.vueAppInit }
                 })
             ].filter(Boolean),
             module: {
