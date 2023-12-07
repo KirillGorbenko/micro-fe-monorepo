@@ -1,5 +1,6 @@
 <script lang="ts">
 import postsList from './components/posts-list/posts-list.vue';
+
 export default {
   components: {
     postsList
@@ -8,9 +9,7 @@ export default {
 </script>
 
 <template>
-  <div
-    class="appWrapper"
-  >
+  <div class='appWrapper'>
     <h1>Vue js</h1>
     <posts-list />
   </div>

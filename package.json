@@ -1,14 +1,22 @@
 {
   "name": "micro-fe",
   "version": "0.0.1",
-  "description": "learn microfrontend",
+  "description": "microfrontend monorepo",
   "main": "index.ts",
   "author": "KG",
   "license": "MIT",
   "private": true,
-  "workspaces": ["packages/*", "projects/*"],
+  "workspaces": [
+    "packages/*",
+    "projects/*"
+  ],
   "scripts": {
-    "build:dev": "webpack --env mode=development",
-    "build:prod": "webpack --env mode=production"
+    "lint:all": "eslint * --fix"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.13.2",
+    "@typescript-eslint/parser": "6.13.2",
+    "eslint": "8.55.0",
+    "eslint-plugin-vue": "9.19.2"
   }
 }

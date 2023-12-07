@@ -1,17 +1,51 @@
 <script lang="ts">
-import Button from "./button.vue";
+import CustomButton from './custom-button.vue';
+import store from '../store';
 
 export default {
   components: {
-    Button
+    CustomButton
+  },
+  data() {
+    return {
+      title: null,
+      description: null
+    }
+  },
+  computed: {
+    store() {
+      return store
+    }
+  },
+  methods: {
+    onButtonClick: function() {
+      store.addNewPost({
+        title: this.title,
+        body: this.description,
+        id: Math.random(),
+        userId: 1
+      });
+    }
   }
 }
 </script>
 
 <template>
-  <div class="postsAdderWrapper">
-    <input type="text" />
-    <button>Добавить</button>
+  <div class='postsAdderWrapper'>
+    <input
+      v-model='title'
+      type='text'
+    >
+    <input
+      v-model='description'
+      type='text'
+    >
+    <custom-button
+      theme='blue'
+      @click='onButtonClick'
+    >
+      Add
+    </custom-button>
   </div>
 </template>
 
