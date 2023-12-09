@@ -1,6 +1,15 @@
+@import '../../colors';
+
 .list {
   width: 90%;
   height: 90%;
   overflow: auto;
-  background: aquamarine;
+  background: $main_color_2;
+  border-radius: 10px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

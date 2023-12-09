@@ -1,7 +1,14 @@
+@import './colors';
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .appWrapper {
   width: 50vw;
   height: 50vh;
-  background: darkcyan;
+  background: $main_color;
   display: flex;
   flex-direction: column;
   align-items: center;

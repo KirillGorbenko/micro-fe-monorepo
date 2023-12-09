@@ -1,30 +1,28 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, { FC } from 'react';
 import Todo from './Todo';
-import {Todo as TodoInterface} from './types';
+import { Todo as TodoInterface } from './types';
+import { useQuery } from '@tanstack/react-query';
+import { fetchTodos } from '../../api';
 
 import styles from './index.module.scss';
 
 const TodoList: FC = () => {
-    const [todos, setTodos] = useState<TodoInterface[]>([])
+  const { data: todos, isLoading } = useQuery<TodoInterface[]>(
+    {
+      queryKey: [ 'todos' ],
+      queryFn: fetchTodos
+    }
+  );
 
-    const fetchTodos = async () => {
-        try {
-            const resp = await fetch('https://jsonplaceholder.typicode.com/todos');
-            const parsedResp = await resp.json();
-
-            setTodos(parsedResp);
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    useEffect(fetchTodos, [])
-
-    return(
-      <ul className={styles.list}>
-          {todos.map(({id, title, completed}) => <Todo key={id} title={title} completed={completed} />)}
-      </ul>
-    );
+  return(
+    <ul className={styles.list}>
+      {isLoading
+        ? 'Loading'
+        : todos.map(
+          ({ id, title, completed }) => <Todo key={id} title={title} completed={completed} />)
+      }
+    </ul>
+  );
 };
 
 export default TodoList;

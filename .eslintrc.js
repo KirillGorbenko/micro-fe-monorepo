@@ -22,6 +22,7 @@ module.exports = {
   rules: {
     quotes: [ 2, 'single' ],
     'object-property-newline': [ 'error', { 'allowAllPropertiesOnSameLine': false } ],
+    semi: 2,
     'vue/html-quotes': [ 'error', 'single' ],
     'object-curly-spacing': [ 'error', 'always' ],
     'array-bracket-spacing': [ 'error', 'always' ],
@@ -36,7 +37,8 @@ module.exports = {
     'array-bracket-newline': [ 'error', {
       'multiline': false,
       'minItems': 3
-    } ]
+    } ],
+    'max-len': [ 'error', { 'code': 120 } ]
   },
   env: {
     browser: true,
@@ -46,4 +48,4 @@ module.exports = {
   ignorePatterns: [
     'src/**/*.test.ts', 'build', 'public', '.idea', 'shims-vue.d.ts', '*.scss', 'tsconfig.json', 'yarn-error.log', 'yarn.lock', '*.json' 
   ]
-}
+};
