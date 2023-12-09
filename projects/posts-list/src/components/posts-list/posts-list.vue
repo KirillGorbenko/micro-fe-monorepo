@@ -1,22 +1,3 @@
-<template>
-  <custom-button
-    theme='blue'
-    @click='updatePosts'
-  >
-    Update posts
-  </custom-button>
-  <posts-adder />
-  <ul class='list'>
-    <posts-list-item
-      v-for='(post, index) in posts'
-      :id='post.id'
-      :key='post.id'
-      :title='post.title'
-      :index='index'
-    />
-  </ul>
-</template>
-
 <script lang="ts">
 import PostsListItem from '../posts-list-item.vue';
 import CustomButton from '../custom-button.vue';
@@ -43,11 +24,35 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.list {
-  background: aqua;
-  width: 90%;
-  height: 90%;
-  overflow: auto;
-}
+<template>
+  <custom-button
+    theme='blue'
+    @click='updatePosts'
+  >
+    Update posts
+  </custom-button>
+  <posts-adder />
+  <ul class='list'>
+    <posts-list-item
+      v-for='(post, index) in posts'
+      :id='post.id'
+      :key='post.id'
+      :title='post.title'
+      :index='index'
+    />
+  </ul>
+</template>
+
+<style lang="scss" scoped>
+  @import '../../index';
+
+  .list {
+    background: $main_color_2;
+    width: 90%;
+    height: 90%;
+    padding: 2%;
+    border-radius: 20px;
+    overflow: auto;
+    color: $text_color_white;
+  }
 </style>

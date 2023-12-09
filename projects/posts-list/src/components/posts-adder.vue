@@ -32,14 +32,22 @@ export default {
 
 <template>
   <div class='postsAdderWrapper'>
-    <input
-      v-model='title'
-      type='text'
-    >
-    <input
-      v-model='description'
-      type='text'
-    >
+    <div class='customInput'>
+      <label class='label'>Title</label>
+      <input
+        v-model='title'
+        class='input'
+        type='text'
+      >
+    </div>
+    <div class='customInput'>
+      <label class='label'>Description</label>
+      <input
+        v-model='description'
+        class='input'
+        type='text'
+      >
+    </div>
     <custom-button
       theme='blue'
       @click='onButtonClick'
@@ -54,9 +62,26 @@ export default {
     width: 90%;
     display: flex;
     gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: flex-end;
   }
 
-  input {
-    width: 80%;
+  .customInput {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .label {
+      font-size: 16px;
+      font-weight: bolder;
+    }
+
+    .input {
+      width: 90%;
+      border-radius: 10px;
+      height: 25px;
+    }
   }
 </style>

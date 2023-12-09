@@ -10,15 +10,25 @@ export default {
 
 <template>
   <div class='appWrapper'>
-    <h1>Vue js</h1>
+    <h1 class='title'>
+      Vue js
+    </h1>
     <posts-list />
   </div>
 </template>
 
 <style lang="scss">
+  @import 'index.scss';
+
   body {
     padding: 0;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .title {
+    color: $main_color_2;
+    font-weight: bold;
   }
 
   .appWrapper {

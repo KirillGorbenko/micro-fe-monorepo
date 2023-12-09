@@ -33,6 +33,7 @@ export default defineComponent({
   .button {
     height: 30px;
     background: $button_color;
+    color: black;
     border: 0;
     border-radius: 5px;
     padding: 5px 10px;
@@ -51,6 +52,7 @@ export default defineComponent({
     &:hover {
       transition: .5s;
       background: $main_color_2;
+      color: white;
     }
   }
 </style>
