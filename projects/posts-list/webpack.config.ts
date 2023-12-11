@@ -80,7 +80,11 @@ module.exports = (env: ENV) => {
       resolve: {
         extensions: [
           '.tsx', '.ts', '.js' 
-        ]
+        ],
+        alias: {
+          '@api': path.resolve(__dirname, 'src/api'),
+          '@components': path.resolve(__dirname, 'src/components'),
+          '@store': path.resolve(__dirname, 'src/store')        }
       },
       devServer: isDev ? {
         port: env.port ?? 3000,
@@ -92,4 +96,4 @@ module.exports = (env: ENV) => {
       } : undefined,
     }
   );
-}
+};

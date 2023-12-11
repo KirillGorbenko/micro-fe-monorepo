@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 import app from './app.vue';
 
 export const mountingApp = (element?: string | Element) => {

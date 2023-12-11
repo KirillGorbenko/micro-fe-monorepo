@@ -1,6 +1,6 @@
 import { reactive } from 'vue';
+import { addNewPost, removePost } from '@api';
 import { Post } from '../types';
-import { addNewPost, removePost } from '../api';
 
 interface Store {
     posts: Post[];
@@ -13,7 +13,7 @@ const store = {
   }),
   setPosts(newValue: Post[]) {
     if (this.debug) {
-      console.log('setPosts вызван с', newValue)
+      console.log('setPosts вызван с', newValue);
     }
 
     this.state.posts.splice(0, this.state.posts.length);
@@ -21,7 +21,7 @@ const store = {
   },
   async addNewPost(post: Post) {
     if (this.debug) {
-      console.log('addNewPost вызван с', post)
+      console.log('addNewPost вызван с', post);
     }
 
     const newPost = await addNewPost(post);
@@ -33,9 +33,9 @@ const store = {
 
       this.state.posts.splice(index, 1);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   }
-}
+};
 
 export default store;

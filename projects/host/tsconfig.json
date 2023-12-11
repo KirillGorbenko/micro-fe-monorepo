@@ -2,18 +2,20 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "outDir": "./build/",
-    "noImplicitAny": true,
-    "module": "ESNext",
-    "target": "es5",
-    "jsx": "react",
-    "allowJs": true,
-    "moduleDetection": "auto",
+    "module": "ES6",
+    "target": "ES6",
+    "lib": ["DOM", "ES6", "DOM.Iterable", "ScriptHost"],
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "composite": true,
-    "moduleResolution": "node"
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "src/*": ["./src/*"],
+    }
   },
-  "exclude": ["node_modules"],
+  "files": ["webpack.config.ts"],
+  "exclude": ["node_modules", "public"],
+  "include": ["src/**/*"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"

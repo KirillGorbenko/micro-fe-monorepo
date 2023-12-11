@@ -1,11 +1,12 @@
 <script lang="ts">
-import PostsListItem from '../posts-list-item.vue';
-import CustomButton from '../custom-button.vue';
-import PostsAdder from '../posts-adder.vue';
+import { defineComponent } from 'vue';
+import PostsListItem from '@components/posts-list-item.vue';
+import CustomButton from '@components/custom-button.vue';
+import PostsAdder from '@components/posts-adder.vue';
 import useGetPosts from './hooks/useGetPosts';
-import store from '../../store';
+import store from '@store';
 
-export default {
+export default defineComponent({
   components: {
     PostsAdder,
     PostsListItem,
@@ -14,14 +15,14 @@ export default {
   setup() {
     const { updatePosts } = useGetPosts();
 
-    return { updatePosts }
+    return { updatePosts };
   },
   data() {
     return {
       posts: store.state.posts
-    }
+    };
   }
-}
+});
 </script>
 
 <template>

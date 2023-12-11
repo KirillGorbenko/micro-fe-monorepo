@@ -20,6 +20,8 @@ module.exports = {
     'plugin:vue/vue3-recommended'
   ],
   rules: {
+    '@typescript-eslint/ban-ts-comment': [ 'error',
+      { 'ts-ignore': 'allow-with-description' }, ],
     quotes: [ 2, 'single' ],
     'object-property-newline': [ 'error', { 'allowAllPropertiesOnSameLine': false } ],
     semi: 2,

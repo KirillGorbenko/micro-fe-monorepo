@@ -1,8 +1,9 @@
 <script lang="ts">
-import store from '../store';
-import CustomButton from './custom-button.vue';
+import { defineComponent } from 'vue';
+import store from '@store';
+import CustomButton from '@components/custom-button.vue';
 
-export default {
+export default defineComponent({
   components: {
     CustomButton
   },
@@ -21,10 +22,10 @@ export default {
   },
   methods: {
     firstCharToUpperCase(title: string) {
-      return title[0].toUpperCase() + title.substring(1, title.length)
+      return title[0]?.toUpperCase() + title.substring(1, title.length);
     }
   }
-}
+});
 </script>
 
 <template>

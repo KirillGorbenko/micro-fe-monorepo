@@ -1,8 +1,9 @@
 <script lang="ts">
-import CustomButton from './custom-button.vue';
-import store from '../store';
+import CustomButton from '@components/custom-button.vue';
+import store from '@store';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
   components: {
     CustomButton
   },
@@ -10,11 +11,11 @@ export default {
     return {
       title: null,
       description: null
-    }
+    };
   },
   computed: {
     store() {
-      return store
+      return store;
     }
   },
   methods: {
@@ -27,7 +28,7 @@ export default {
       });
     }
   }
-}
+});
 </script>
 
 <template>

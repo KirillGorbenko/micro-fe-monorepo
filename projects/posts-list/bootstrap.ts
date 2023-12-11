@@ -1,11 +1,11 @@
-import { mountingApp } from "./src";
+import { mountingApp } from './src';
 
 function initMicroFrontend (element: Element) {
-    if (!element) {
-        throw new Error('root element not found');
-    }
+  if (!element) {
+    throw new Error('root element not found');
+  } 
 
-    mountingApp(element);
+  mountingApp(element);
 }
 
 export default initMicroFrontend;

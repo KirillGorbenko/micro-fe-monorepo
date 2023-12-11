@@ -1,15 +1,15 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import App from "./src/App";
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './src/App';
 
 function initMicroFrontend (element: Element) {
-    if (!element) {
-        throw new Error('root element not found');
-    }
+  if (!element) {
+    throw new Error('root element not found');
+  } 
 
-    const container = createRoot(element);
+  const container = createRoot(element);
 
-    container.render(<App />);
-};
+  container.render(<App />);
+}
 
 export default initMicroFrontend;

@@ -1,3 +1,4 @@
 import './index.scss';
+import { bootstrap } from './bootstrap';
 
-import("./bootstrap");
+bootstrap();

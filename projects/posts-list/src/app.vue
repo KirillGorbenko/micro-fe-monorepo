@@ -1,11 +1,12 @@
 <script lang="ts">
-import postsList from './components/posts-list/posts-list.vue';
+
+import postsList from '@components/posts-list/posts-list.vue';
 
 export default {
   components: {
     postsList
   }
-}
+};
 </script>
 
 <template>
