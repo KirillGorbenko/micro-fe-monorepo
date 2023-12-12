@@ -1,3 +1,7 @@
+import { eventBus } from 'event-bus';
+
+const { subscribe, publish } = eventBus;
+
 export const bootstrap = () => {
   // @ts-ignore Надо разобраться
   import( 'reactApp/ReactAppInit').then(({ default: initMicroFrontend }) => {
@@ -5,7 +9,11 @@ export const bootstrap = () => {
     console.log('reactAppContainer', reactAppContainer);
 
     if (reactAppContainer) {
-      initMicroFrontend(reactAppContainer);
+      initMicroFrontend({
+        element: reactAppContainer,
+        subscribe,
+        publish
+      });
     } else {
       throw Error('react appScript not found, please check this micro frontend');
     }
@@ -16,7 +24,11 @@ export const bootstrap = () => {
     const vueAppContainer = document.querySelector('#vue-app-1');
 
     if (vueAppContainer) {
-      initMicroFrontend(vueAppContainer);
+      initMicroFrontend({
+        element: vueAppContainer,
+        subscribe,
+        publish
+      });
     } else {
       throw Error('vue appScript not found, please check this micro frontend');
     }

@@ -12,6 +12,7 @@ export default defineComponent({
     PostsListItem,
     CustomButton
   },
+  inject: [ 'eventBus' ],
   setup() {
     const { updatePosts } = useGetPosts();
 
@@ -19,13 +20,18 @@ export default defineComponent({
   },
   data() {
     return {
-      posts: store.state.posts
+      posts: store.state.posts,
+      counter: 0
     };
+  },
+  created() {
+    this.eventBus?.subscribe('add_count', (count) => this.counter = count);
   }
 });
 </script>
 
 <template>
+  <p>{{ counter }}</p>
   <custom-button
     theme='blue'
     @click='updatePosts'

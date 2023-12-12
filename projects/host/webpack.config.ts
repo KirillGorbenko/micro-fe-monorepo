@@ -13,7 +13,7 @@ interface ENV {
 const paths = {
   html: path.resolve(__dirname, 'public', 'index.html'),
   output: path.resolve(__dirname, 'build'),
-  entry: path.resolve(__dirname, 'src', 'todos.ts')
+  entry: path.resolve(__dirname, 'src', 'index.ts')
 };
 
 const moduleFederationConfig = {
