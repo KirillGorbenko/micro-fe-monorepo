@@ -1,6 +1,6 @@
 import React, { FC, useContext, useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import TodoList from './components/TodoList/TodoList';
+import TodoList from '@components/TodoList/TodoList';
 
 import styles from './index.module.scss';
 import { EventBusContext } from '../bootstrap';

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src/",
+    "baseUrl": ".",
     "outDir": "./build/",
     "module": "ES6",
     "target": "ES6",
@@ -11,8 +11,10 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
     "paths": {
-      "components/*": ["./src/components/*"],
-      "api/*": ["./src/api/*"]
+      "@components/*": ["./src/components/*"],
+      "@components": ["./src/components"],
+      "@api": ["./src/api"],
+      "@api/*": ["./src/api/*"]
     }
   },
   "files": ["bootstrap.tsx", "modules.d.ts", "webpack.config.ts"],

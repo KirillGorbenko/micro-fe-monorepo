@@ -3,7 +3,10 @@ module.exports = {
   parser: 'vue-eslint-parser',
   parserOptions: {
     projects: [
-      './tsconfig.json', './projects/posts-list/tsconfig.json', './projects/host/tsconfig.json', './projects/todo-list/tsconfig.json' 
+      './tsconfig.json',
+      './projects/posts-list/tsconfig.json',
+      './projects/host/tsconfig.json',
+      './projects/todo-list/tsconfig.json'
     ],
     parser: '@typescript-eslint/parser',
     tsconfigRootDir: __dirname,
@@ -48,6 +51,12 @@ module.exports = {
     node: true,
   },
   ignorePatterns: [
-    'src/**/*.test.ts', 'build', 'public', '.idea', 'shims-vue.d.ts', '*.scss', 'tsconfig.json', 'yarn-error.log', 'yarn.lock', '*.json' 
+    'src/**/*.test.ts',
+    'build', 'public',
+    '.idea', 'shims-vue.d.ts',
+    '*.scss', 'tsconfig.json',
+    'yarn-error.log',
+    'yarn.lock',
+    '*.json'
   ]
 };

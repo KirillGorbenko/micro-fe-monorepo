@@ -1,13 +1,20 @@
-import React, { FC, useState } from 'react';
+import React, { ChangeEvent, FC, useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
+
 import { Todo } from './types';
-
 import styles from './index.module.scss';
+import { patchTodo } from '@api/todos';
 
-const Todo: FC<Partial<Todo>> = ({ title, completed }) => {
+const Todo: FC<Partial<Todo>> = React.memo(({ title, completed, id }) => {
   const [ checked, setChecked ] = useState(completed);
 
-  const handleChange = () => {
+  const mutation = useMutation({
+    mutationFn: ({ checked }: { checked: boolean }) => patchTodo(id, { completed: checked }),
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setChecked((prev) => !prev);
+    mutation.mutate({ checked: e.target.checked });
   };
 
   return(
@@ -16,6 +23,6 @@ const Todo: FC<Partial<Todo>> = ({ title, completed }) => {
       <input type="checkbox" checked={checked} onChange={handleChange}/>
     </li>
   );
-};
+});
 
 export default Todo;
